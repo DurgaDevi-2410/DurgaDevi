@@ -1,0 +1,159 @@
+/* -----------------------------------
+   FIXED NAVBAR WRAPPER
+----------------------------------- */
+.nav-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding: 18px 0;
+  
+  background: rgba(255, 255, 255, 0.2); /* compulsory */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); /* compulsory */
+  border-radius: 12px;
+}
+
+/* -----------------------------------
+   GLASS CONTAINER
+----------------------------------- */
+.nav-container {
+  width: 92%;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px); /* Safari & Chrome */
+  border-radius: 18px;
+  padding: 18px 40px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* -----------------------------------
+   LOGO
+----------------------------------- */
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #6c63ff;
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+}
+
+.logo-text:hover {
+  opacity: 0.8;
+}
+
+/* -----------------------------------
+   MENU (Desktop)
+----------------------------------- */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #4a4a68;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover {
+  color: #6c63ff;
+}
+
+/* -----------------------------------
+   RIGHT BUTTON
+----------------------------------- */
+.nav-btn {
+  background: linear-gradient(90deg, #5a73ff, #8b5bff);
+  padding: 10px 22px;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+.nav-btn:hover {
+  opacity: 0.9;
+}
+
+/* -----------------------------------
+   HAMBURGER MENU (Mobile)
+----------------------------------- */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: #4a4a68;
+}
+
+/* -----------------------------------
+   MOBILE MENU STYLING
+----------------------------------- */
+@media (max-width: 900px) {
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide desktop button */
+  .nav-right {
+    display: none;
+  }
+
+  /* Mobile menu hidden initially */
+  .nav-menu {
+    position: absolute;
+    top: 85px;
+    right: 20px;
+    width: 75%;
+    background: white;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+    display: none;
+  }
+
+  /* Mobile menu visible */
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu li a {
+    font-size: 18px;
+    color: #4a4a68;
+  }
+}
+
+/* -----------------------------------
+   OFFSET FIX (IMPORTANT)
+   Prevent navbar from overlapping content
+----------------------------------- */
+body {
+  padding-top: 110px;
+}
+
+
+.logo-text {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;      /* change size if needed */
+  width: 90px !important;
+  object-fit: contain;
+}
